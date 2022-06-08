@@ -14,14 +14,12 @@
       %div{:style => "display: flex; flex-direction: row; flex-wrap: wrap"}
         .card{:style => "width: 18rem; margin: 10px"}
           %blockquote.blockquote.mb-0.card-body
+            %img.img-thumbnail{src: project.first_photo_url}
             %header.blockquote-header.text-right
               %small
                 = project.category.name
             .d-flex.justify-content-center.mt-2{:style => "display: flex; flex-direction: row"}
               %h5.card-title
                 = project.title
-            - if user_signed_in?
-              .d-flex.justify-content-center.mt-2
-                = render(partial: 'grade/shared/stars', locals: {project: project})
             %a.btn.btn-primary.d-flex.justify-content-center.mt-2{href: project_path(project)}
               Details

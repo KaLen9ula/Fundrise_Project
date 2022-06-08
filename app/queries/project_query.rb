@@ -1,8 +1,8 @@
 class ProjectQuery
   attr_reader :projects, :category
 
-  def initialize(movies, category)
-    @projects = movies
+  def initialize(projects, category)
+    @projects = projects
     @category = category
   end
 

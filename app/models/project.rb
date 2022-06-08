@@ -5,7 +5,6 @@ class Project < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :start_day, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
 
   def first_photo_url
     photos.first.image.url

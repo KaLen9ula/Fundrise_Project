@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
 
-  resources :movie, only: [:show]
+  resources :project, only: [:show]
 end

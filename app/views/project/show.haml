@@ -11,6 +11,7 @@
           .d-flex.justify-content-between.mt-3
             %p.font-weight-bold.lead
               = "Category: #{@project.category.name}"
+          %img.img-responsive{src: @project.first_photo_url, height: 500}
           .general-info-wrap.divider-lg.mt-2
             %p.lead.big
               = "Description: #{@project.description}"
