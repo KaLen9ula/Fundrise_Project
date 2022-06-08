@@ -1,0 +1,27 @@
+.container
+  .row.mt-5
+    .dropdown
+      %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+        Sort by category
+      .dropdown-menu
+        %a.dropdown-item{href: root_path, class: !params[:category] ? "active" : ""}
+          All
+        - @categories.each do |category|
+          %a.dropdown-item{href: root_path(category: category.id), class: params[:category]&.to_i == category.id ? "active" : ""}
+            = category.name
+  .row
+    - @projects.each do |project|
+      %div{:style => "display: flex; flex-direction: row; flex-wrap: wrap"}
+        .card{:style => "width: 18rem; margin: 10px"}
+          %blockquote.blockquote.mb-0.card-body
+            %header.blockquote-header.text-right
+              %small
+                = project.category.name
+            .d-flex.justify-content-center.mt-2{:style => "display: flex; flex-direction: row"}
+              %h5.card-title
+                = project.title
+            - if user_signed_in?
+              .d-flex.justify-content-center.mt-2
+                = render(partial: 'grade/shared/stars', locals: {project: project})
+            %a.btn.btn-primary.d-flex.justify-content-center.mt-2{href: project_path(project)}
+              Details
