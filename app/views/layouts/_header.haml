@@ -2,6 +2,9 @@
   %a.btn.btn-primary{:href => root_path} VoBlago
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
+  %a.btn.btn-primary.ml-2{:href => info_about_path} How it works
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %form.form-inline.ml-auto
       - if user_signed_in?
