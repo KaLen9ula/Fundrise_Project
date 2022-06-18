@@ -16,6 +16,6 @@
               %p.lead.big
                 = "Description: #{@project.description}"
             .d-flex.justify-content-end
-              %a.btn.btn-primary
+              = link_to support_index_path(project_id: @project), class: 'btn btn-primary', method: :post do
                 Support
 
